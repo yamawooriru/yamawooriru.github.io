@@ -1,0 +1,42 @@
+{{/* 記事ファイルのパスから data/history のキーを作る */}}
+{{ $rel := .File.Path }} {{/* 例: posts/hello.md */}}
+{{ $key := replace (replace $rel "/" "__") "." "_" }}
+{{ $hist := index .Site.Data.history $key }}
+
+{{ if and $hist (gt (len $hist) 0) }}
+<section class="history">
+  <h3 class="history__title">更新履歴</h3>
+
+  <div class="timeline">
+    {{ range $i, $h := $hist }}
+      <div class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <div class="timeline-meta">
+            <time class="timeline-date" datetime="{{ $h.date }}">{{ $h.date }}</time>
+            <span class="timeline-author">by {{ $h.author }}</span>
+          </div>
+          <div class="timeline-message">{{ $h.message }}</div>
+          <div class="timeline-link">
+            <a href="{{ $h.url }}" target="_blank" rel="noopener">GitHubでコミットを見る</a>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+.history{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(0,0,0,.12)}
+.history__title{margin:0 0 1rem;font-size:1.1rem}
+
+.timeline{position:relative;margin:1rem 0;padding-left:40px;border-left:2px solid rgba(0,0,0,.2)}
+.timeline-item{position:relative;margin:0 0 1.25rem}
+.timeline-dot{position:absolute;left:-11px;top:6px;width:18px;height:18px;border-radius:999px;background:rgba(0,0,0,.8);border:2px solid #fff}
+.timeline-content{background:rgba(0,0,0,.035);padding:12px 14px;border-radius:10px}
+.timeline-meta{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.9rem;opacity:.85}
+.timeline-date{font-weight:600}
+.timeline-message{margin:.5rem 0 .4rem}
+.timeline-link a{text-decoration:underline}
+</style>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <header>
+      <h1 class="f1">{{ .Title }}</h1>
+    </header>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ partial "history-timeline.html" . }}
+  </article>
+{{ end }}
