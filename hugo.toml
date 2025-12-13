@@ -1,0 +1,9 @@
+baseURL = "https://yamawooriru.github.io/"
+languageCode = "ja-jp"
+title = "yamawooriru"
+theme = "ananke"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
