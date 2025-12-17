@@ -7,3 +7,19 @@ theme = "ananke"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "About us"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Records"
+    url = "/records/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 30
