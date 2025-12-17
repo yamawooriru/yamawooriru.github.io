@@ -8,16 +8,10 @@ url: "/records/"
 
 <div class="records-timeline">
 
-<div class="records-item">
-  <div class="records-dot"></div>
-  <div class="records-body">
-    <div class="records-date">2025-12-17</div>
-    <div class="records-title">サイト公開（Hugo + GitHub Pages）</div>
-    <div class="records-text">
-      編集履歴タイムライン付きで公開。
-    </div>
-  </div>
-</div>
+{{< record date="2025-12-17" title="サイト公開（Hugo + GitHub Pages）" >}}
+編集履歴タイムライン付きで公開。  
+以後、GitHub上の編集履歴がそのまま記録として残る運用へ。
+{{< /record >}}
 
 </div>
 
