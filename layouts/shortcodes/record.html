@@ -1,0 +1,10 @@
+<div class="records-item">
+  <div class="records-dot" aria-hidden="true"></div>
+  <div class="records-body">
+    {{ with (.Get "date") }}<div class="records-date">{{ . }}</div>{{ end }}
+    {{ with (.Get "title") }}<div class="records-title">{{ . }}</div>{{ end }}
+    <div class="records-text">
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+</div>
