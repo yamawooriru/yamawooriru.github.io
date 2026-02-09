@@ -2,6 +2,7 @@
 title: "GitHubから初投稿"
 date: 2025-12-13
 draft: false
+tags: ["建築", "記録", "テスト"]
 ---
 
 これはGitHubのWeb画面から作った記事です。
