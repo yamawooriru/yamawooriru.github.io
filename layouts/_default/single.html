@@ -2,6 +2,14 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <header>
       <h1 class="f1">{{ .Title }}</h1>
+
+      {{ with .Params.tags }}
+      <div class="post-tags">
+        {{ range . }}
+          <a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
     </header>
 
     <div class="content">
